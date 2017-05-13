@@ -2,7 +2,7 @@ import __init__
 import pygame
 
 class CPlayerBlock:
-    def __init__(self, direction):
+    def __init__(self, direction, color):
         x = __init__.Player.Rect.x
         y = __init__.Player.Rect.y
 
@@ -20,6 +20,7 @@ class CPlayerBlock:
             x = x - __init__.BLOCK_WIDTH
 
         self.Direction = direction
+        self.Color = color
         self.Switch = []
         self.PreviousTicks = pygame.time.get_ticks()
         self.Rect = pygame.Rect(x, y, __init__.BLOCK_WIDTH, __init__.BLOCK_HEIGHT)
@@ -50,4 +51,4 @@ class CPlayerBlock:
             __init__.GameOverMenu.Activate()
 
     def Draw(self):
-        pygame.draw.rect(__init__.Window, __init__.Color_White, self.Rect)
+        pygame.draw.rect(__init__.Window, self.Color, self.Rect)

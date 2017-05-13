@@ -28,13 +28,13 @@ class CPlayer:
         self.Direction = 0
         self.Alive = True
 
-    def AddBlock(self):
+    def AddBlock(self, color):
         direction = self.Direction
 
         if len(self.Blocks) > 0:
             direction = self.Blocks[len(self.Blocks) - 1].Direction
 
-        playerblock = CPlayerBlock(direction)
+        playerblock = CPlayerBlock(direction, color)
 
         if len(self.Blocks) > 0:
             for i, v in enumerate(self.Blocks[len(self.Blocks) - 1].Switch):
